@@ -5,13 +5,11 @@ const init = () => {
         event.preventDefault(); 
         const input = document.querySelector("input#searchById");
 
-        console.log(input.value);
 
-        fetch("http://localhost:3000/movies")
+        fetch(`http://localhost:3000/movies/${input.value}`)
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
-            // LOG: (3) [{…}, {…}, {…}]
           });
     });
 };
